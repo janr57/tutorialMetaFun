@@ -1,0 +1,136 @@
+% ctx-texto.tex
+%
+% Copyright (C) 2022--2026 José A. Navarro Ramón <janr.devel@gmail.com>
+% Licencia del código GPLv2
+% Licencia Creative Commons Recognition Non-Commercial Share-alike.
+% (CC-BY-NC-SA)
+
+
+\startcomponent ctx-texto
+  \product tutorialLuaMetaFun
+  
+\startchapter[title=Texto]
+  En este capítulo aprenderemos a utilizar texto en nuestras figuras realizadas con
+  \MetaFun. Empezaremos diciendo que \type{draw} o \type{fill}, que veremos a
+  continuación son comandos, que ordenan dibujar o rellenar un cierto objeto que
+  se indica después de ellos.
+
+  Para empezar, analizaremos el siguiente código y su resultado en \MetaFun:
+  \starttyping[option=METAFUN]
+    \startMPcode
+      fill fullcircle xyscaled (8cm,1cm) withcolor "darkred" ;
+      draw textex{"\bf Texto A"} withcolor "white" ;
+    \stopMPcode
+  \stoptyping
+  
+  \startMPcode
+    fill fullcircle xyscaled (8cm,1cm) withcolor "darkred" ;
+    draw textext("\bf This is text A") withcolor "white" ;
+  \stopMPcode
+
+  \startsection[title={Comandos \color[blue]{type{draw}} y \color[blue]{\type{fill}}}]
+  Conviene distinguir \type{textext} de \type{fullcircle} o \type{xyscaled}, que
+    aunque se encuentran en la misma posición respecto del comando (\type{fill} o
+    \type{draw}) no son lo mismo, o distiguirlos de \type{xyscaled} o
+    \type{withcolor}, que no se encuentran en la misma posición. Empezaremos por
+    el primero de ellos.
+  \stopsection
+  
+  \startsection[title=Función \color[red]{\type{textext}}]
+    Esta es una macro específica de \ConTeXt / \MetaFun\ (no existe en \MetaPost\
+    clásico estándar).
+    Técnicamente, es una función generadora que devuelve un objeto gráfico,
+    que toma una cadena de texto, la procesa a través de \ConTeXt\ y devuelve un
+    objeto gráfico (una variable de tipo \type{picture}).
+    Por tanto, es el sujeto o el objeto que vas a pintar mediante el comando
+    \type{draw}.
+
+    \type{textext} es, como hemos dicho, una función generadora; se usa
+    añadiendo entre paréntesis un texto \type{textext("...texto...")} y genera un
+    objeto gráfico de tipo \type{picture}.
+    En resumen, un objeto de tipo \type{picture} es una imagen en \MetaPost, no
+    un camino o trazo. Es una estructura compleja que contiene información
+    tipográfica, fuentes incrustadas, colores propios y contornos cerrados devueltos
+    por el motor tipográfico de \ConTeXt\.
+
+    \startitemize[packed, joinedup]
+    \item \type{textext} es, como hemos dicho, una función generadora; se usa
+      añadiendo entre paréntesis un texto \type{textext("...texto...")} y genera un
+      objeto gráfico de tipo \type{picture}.
+      En resumen, un objeto de tipo \type{picture} es una imagen en \MetaPost, no
+    un camino o trazo. Es una estructura compleja que contiene información
+    tipográfica, fuentes incrustadas, colores propios y contornos cerrados devueltos
+    por el motor tipográfico de \ConTeXt\.
+    \item \type{fullcircle}, es un objeto de tipo \type{path}, un camino, trazo
+      o dibujo vectorial, que genera un círculo que hemos de pintar pero no es una
+      función, y no le sigue ningún paréntesis. Así, que el motor de \MetaPost\ lo
+      procesa de forma completamente distinta al anterior.
+    \item \type{xyscaled}
+      En MetaFun y MetaPost, xyscaled es un operador de transformación (un tipo
+      especial de función binaria).Sirve para aplicar un escalado no uniforme a un
+      objeto geométrico (path, picture o pen), estirándolo o encogiéndolo en los ejes
+      X e Y de forma independiente.¿Cómo funciona?A diferencia de scaled (que escala
+      todo de forma proporcional con un solo número), xyscaled toma como argumento un
+      par de coordenadas (pair), definido como (factor_x, factor_y).El primer número
+      multiplica la anchura (eje X).El segundo número multiplica la altura (eje Y).
+    \stopitemize
+    
+    \startsection[title=Atributo \color[darkgreen]{\type{withcolor}}]
+      Es un adjetivo, un modificador de opciones (un atributo), que no genera
+      objetos, sino que modifica las propiedades de un comando de dibujo
+      (como draw o fill).
+
+      Otro atributo es \type{xyscaled}, que modifica el escalado de una imagen.
+      En el ejemplo anterior modifica las proporciones del círculo.
+
+    \stopsection
+
+    \startsection[title={Comandos de \ConTeXt\ en el texto}]
+      
+      En el texto se pueden utilizar comandos estándar de \ConTeXt\, como por
+      ejemplo \type{framed}, que lo recuadra
+
+    \starttyping[option=METAFUN]
+      \startMPcode
+        fill fullcircle xyscaled (8cm,1cm) withcolor "darkred" ;
+        draw textex{"\framed{\bf Texto A}"} withcolor "white" ;
+      \stopMPcode
+    \stoptyping
+
+    \startMPcode
+      fill fullcircle xyscaled (8cm, 1cm) withcolor "green" ;
+      draw textext("\bf \framed{This is text A}") withcolor "black" ;
+    \stopMPcode
+  \stopsection
+
+  \startMPcode
+    fill fullcircle xyscaled (8cm, 1cm) withcolor "green" ;
+    draw textext("\bf \framed{This is text A}") xyscaled(0.4mm,0.4mm) withcolor
+    "black" ;
+  \stopMPcode
+  \stopsection
+
+%  xyscaled es en realidad un atajo (shorthand) que combina dos operadores básicos en
+%  uno solo. Las siguientes tres líneas de código hacen exactamente lo mismo:
+%  draw fullcircle xyscaled (4cm, 2cm) ;
+%draw fullcircle xscaled 4cm yscaled 2cm ;
+%draw fullcircle transformed identity scaled 1 xscaled 4cm yscaled 2cm ; % Interno
+%
+%Características técnicasTipo de datos: Devuelve un objeto del mismo tipo que recibe
+%(si le das un path, devuelve un path transformado).Precedencia: Tiene la misma
+%prioridad matemática que la multiplicación o el operador scaled estándar.
+
+\stopchapter
+
+\stopcomponent
+
+
+
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: context
+%%% ConTeXt-Mark-version: "IV"
+%%% TeX-engine: default
+%%% TeX-master: "../ctx-tutorialLuaMetaFun.tex"
+%%% End:

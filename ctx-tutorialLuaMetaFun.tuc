@@ -1,0 +1,850 @@
+local utilitydata = { }
+
+utilitydata.comment={
+ ["escape"]="[===[ ... ]===]",
+ ["file"]="ctx-tutorialLuaMetaFun",
+ ["format"]="cont-en",
+ ["stamp"]="2026.04.21 10:31",
+ ["version"]=0x1.547ae147ae148p+0,
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.variables then utilitydata.job.variables = { } end
+
+utilitydata.job.variables.checksums={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.variables then utilitydata.job.variables = { } end
+
+utilitydata.job.variables.collected={
+ ["macros"]={},
+ ["randomseed"]=0x1.6082bbf8034e2p-2,
+ ["sectionblockorder"]={ "frontpart", "bodypart" },
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.structure then utilitydata.job.structure = { } end
+
+utilitydata.job.structure.collected={
+ ["branches"]={
+  {
+   ["branches"]={
+    {
+     ["branches"]={},
+     ["name"]="ctx-entorno",
+     ["type"]="environment",
+    },
+    {
+     ["branches"]={},
+     ["name"]="ctx-portada",
+     ["type"]="component",
+    },
+    {
+     ["branches"]={},
+     ["name"]="ctx-indice",
+     ["type"]="component",
+    },
+    {
+     ["branches"]={},
+     ["name"]="ctx-prefacio",
+     ["type"]="component",
+    },
+    {
+     ["branches"]={},
+     ["name"]="ctx-intro",
+     ["type"]="component",
+    },
+    {
+     ["branches"]={},
+     ["name"]="ctx-texto",
+     ["type"]="component",
+    },
+   },
+   ["name"]="ctx-tutorialLuaMetaFun",
+   ["type"]="product",
+  },
+ },
+ ["name"]="",
+ ["type"]="text",
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.positions then utilitydata.job.positions = { } end
+
+utilitydata.job.positions.collected={
+ ["shared"]={
+  ["x_h_d"]={},
+  ["x_h_d_hs"]={},
+  ["x_y_w_h"]={},
+  ["y_w_h_d"]={},
+ },
+ ["user"]={},
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.datasets then utilitydata.job.datasets = { } end
+
+utilitydata.job.datasets.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.pagestates then utilitydata.job.pagestates = { } end
+
+utilitydata.job.pagestates.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.specials then utilitydata.structures.specials = { } end
+
+utilitydata.structures.specials.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.sections then utilitydata.structures.sections = { } end
+
+utilitydata.structures.sections.collected={
+ {
+  ["block"]="frontpart",
+  ["conversionset"]="default",
+  ["hidenumber"]=true,
+  ["language"]="es",
+  ["numbers"]=1,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=1,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=2,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=3,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=4,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=5,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=6,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=7,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=8,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=9,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=10,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=11,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+ {
+  ["block"]="bodypart",
+  ["conversionset"]="default",
+  ["language"]="es",
+  ["numbers"]=12,
+  ["separatorset"]="default",
+  ["set"]="all",
+ },
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.counters then utilitydata.structures.counters = { } end
+
+utilitydata.structures.counters.collected={
+ ["chemical"]={
+  { 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["combination"]={
+  { 0 },
+ },
+ ["endnote"]={
+  { 0 },
+ },
+ ["figure"]={
+  { 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["float"]={
+  { 0, 0, 0, 0 },
+ },
+ ["footnote"]={
+  { 0 },
+ },
+ ["formula"]={
+  { 0, 0, 0, 0 },
+ },
+ ["graphic"]={
+  { 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["intermezzo"]={
+  { 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["itemgroup:itemize"]={
+  { 0, 0, 2, 2, 1, 1, 2, 2, 1, 1, 3 },
+  { 0, 5, 0, 3, 0, 2, 0, 0, 0, 0, 0, 0 },
+ },
+ ["itemgroup:itemize:note"]={
+  { 0, 0, 0, 0 },
+ },
+ ["linenote"]={
+  { 0 },
+ },
+ ["mathnote"]={
+  { 0 },
+ },
+ ["paragraph"]={
+  { 0, 0, 0, 0 },
+ },
+ ["publicationnote"]={
+  { 0 },
+ },
+ ["realpage"]={
+  { 11 },
+ },
+ ["subpage"]={
+  { 11 },
+ },
+ ["table"]={
+  { 0, 0, 0, 0, 0, 0, 0 },
+ },
+ ["textnote:note"]={
+  { 0 },
+ },
+ ["userpage"]={
+  { 9 },
+ },
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.lists then utilitydata.structures.lists = { } end
+
+utilitydata.structures.lists.collected={
+ {
+  ["metadata"]=13,
+  ["numberdata"]=14,
+  ["references"]={
+   ["block"]="frontpart",
+   ["internal"]=1,
+   ["prefix"]="ctx-prefacio",
+   ["realpage"]=5,
+   ["section"]=1,
+   ["structure"]=4,
+  },
+  ["titledata"]={
+   ["title"]="Prefacio",
+  },
+ },
+ {
+  ["metadata"]=13,
+  ["numberdata"]=15,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=2,
+   ["prefix"]="ctx-intro",
+   ["realpage"]=6,
+   ["section"]=2,
+   ["structure"]=5,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Introducción",
+  },
+ },
+ {
+  ["metadata"]=16,
+  ["numberdata"]=17,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=3,
+   ["prefix"]="ctx-intro",
+   ["realpage"]=6,
+   ["section"]=3,
+   ["structure"]=5,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="{Comandos como \\color [blue]{\\type {fill}}} y otros",
+  },
+ },
+ {
+  ["metadata"]=16,
+  ["numberdata"]=18,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=4,
+   ["prefix"]="ctx-intro",
+   ["realpage"]=7,
+   ["section"]=4,
+   ["structure"]=5,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Función generadora \\color [red]{\\type {fullcircle}}",
+  },
+ },
+ {
+  ["metadata"]=19,
+  ["numberdata"]=20,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=5,
+   ["prefix"]="ctx-intro",
+   ["realpage"]=8,
+   ["section"]=5,
+   ["structure"]=5,
+  },
+  ["titledata"]={
+   ["label"]="subsection",
+   ["title"]="Unidad \\color [black]{\\type {bp}}",
+  },
+ },
+ {
+  ["metadata"]=19,
+  ["numberdata"]=21,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=6,
+   ["prefix"]="ctx-intro",
+   ["realpage"]=8,
+   ["section"]=6,
+   ["structure"]=5,
+  },
+  ["titledata"]={
+   ["label"]="subsection",
+   ["title"]="Operador secundario \\color [darkgreen]{\\type {scaled}}",
+  },
+ },
+ {
+  ["metadata"]=19,
+  ["numberdata"]=22,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=7,
+   ["prefix"]="ctx-intro",
+   ["realpage"]=8,
+   ["section"]=7,
+   ["structure"]=5,
+  },
+  ["titledata"]={
+   ["label"]="subsection",
+   ["title"]="{Operadores secundarios \\color [darkgreen]{\\type {xscaled}}, \\color [darkgreen]{\\type {yscaled}}} y \\color [darkgreen]{\\type {xyscaled}}",
+  },
+ },
+ {
+  ["metadata"]=19,
+  ["numberdata"]=23,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=8,
+   ["prefix"]="ctx-intro",
+   ["realpage"]=9,
+   ["section"]=8,
+   ["structure"]=5,
+  },
+  ["titledata"]={
+   ["label"]="subsection",
+   ["title"]="Atributo \\color [darkgreen]{\\type {withcolor}}",
+  },
+ },
+ {
+  ["metadata"]=13,
+  ["numberdata"]=24,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=9,
+   ["prefix"]="ctx-texto",
+   ["realpage"]=10,
+   ["section"]=9,
+   ["structure"]=6,
+  },
+  ["titledata"]={
+   ["label"]="chapter",
+   ["title"]="Texto",
+  },
+ },
+ {
+  ["metadata"]=16,
+  ["numberdata"]=25,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=10,
+   ["prefix"]="ctx-texto",
+   ["realpage"]=10,
+   ["section"]=10,
+   ["structure"]=6,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Comandos \\color [blue]{type{draw}} y \\color [blue]{\\type {fill}}",
+  },
+ },
+ {
+  ["metadata"]=16,
+  ["numberdata"]=26,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=11,
+   ["prefix"]="ctx-texto",
+   ["realpage"]=10,
+   ["section"]=11,
+   ["structure"]=6,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Función \\color [red]{\\type {textext}}",
+  },
+ },
+ {
+  ["metadata"]=16,
+  ["numberdata"]=27,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=12,
+   ["prefix"]="ctx-texto",
+   ["realpage"]=11,
+   ["section"]=12,
+   ["structure"]=6,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Atributo \\color [darkgreen]{\\type {withcolor}}",
+  },
+ },
+ {
+  ["metadata"]=16,
+  ["numberdata"]=28,
+  ["references"]={
+   ["block"]="bodypart",
+   ["internal"]=13,
+   ["prefix"]="ctx-texto",
+   ["realpage"]=11,
+   ["section"]=13,
+   ["structure"]=6,
+  },
+  ["titledata"]={
+   ["label"]="section",
+   ["title"]="Comandos de \\ConTeXt \\ en el texto",
+  },
+ },
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.pages then utilitydata.structures.pages = { } end
+
+utilitydata.structures.pages.collected={
+ {
+  ["block"]="frontpart",
+  ["number"]=1,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="stop",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=1,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="stop",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=1,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="start",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=2,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="start",
+ },
+ {
+  ["block"]="frontpart",
+  ["number"]=3,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=4,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=5,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=6,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=7,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=8,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="start",
+ },
+ {
+  ["block"]="bodypart",
+  ["number"]=9,
+  ["numberdata"]=29,
+  ["prefixdata"]=30,
+  ["state"]="start",
+ },
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.references then utilitydata.structures.references = { } end
+
+utilitydata.structures.references.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.references then utilitydata.structures.references = { } end
+
+utilitydata.structures.references.referred={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.parwrappers then utilitydata.job.parwrappers = { } end
+
+utilitydata.job.parwrappers.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.objects then utilitydata.job.objects = { } end
+
+utilitydata.job.objects.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.itemgroups then utilitydata.structures.itemgroups = { } end
+
+utilitydata.structures.itemgroups.collected={
+ ["itemize"]={
+  {
+   { 2, 0 },
+  },
+  {
+   { 2, 0 },
+  },
+  {
+   { 2, 0 },
+  },
+  {
+   { 2, 0 },
+   { 2, 0 },
+  },
+  {
+   { 3, 0 },
+  },
+ },
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.synonyms then utilitydata.structures.synonyms = { } end
+
+utilitydata.structures.synonyms.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.registers then utilitydata.structures.registers = { } end
+
+utilitydata.structures.registers.collected={
+}
+
+if not utilitydata.structures then utilitydata.structures = { } end
+if not utilitydata.structures.blocks then utilitydata.structures.blocks = { } end
+
+utilitydata.structures.blocks.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.linkedlists then utilitydata.job.linkedlists = { } end
+
+utilitydata.job.linkedlists.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.files then utilitydata.job.files = { } end
+
+utilitydata.job.files.collected={
+}
+
+if not utilitydata.publications then utilitydata.publications = { } end
+
+utilitydata.publications.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.meshedup then utilitydata.job.meshedup = { } end
+
+utilitydata.job.meshedup.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.fileobjreferences then utilitydata.job.fileobjreferences = { } end
+
+utilitydata.job.fileobjreferences.collected={
+}
+
+if not utilitydata.job then utilitydata.job = { } end
+if not utilitydata.job.embedded then utilitydata.job.embedded = { } end
+
+utilitydata.job.embedded.collected={
+}
+
+utilitydata.job.packed={
+ ["index"]={
+  { 0, 1 },
+  { 0, 1, 1 },
+  { 0, 1, 2 },
+  { 0, 1, 2, 1 },
+  { 0, 1, 2, 2 },
+  { 0, 1, 2, 3 },
+  { 0, 1, 2, 4 },
+  { 0, 2 },
+  { 0, 2, 1 },
+  { 0, 2, 2 },
+  { 0, 2, 3 },
+  { 0, 2, 4 },
+  {
+   ["catcodes"]=9,
+   ["coding"]="tex",
+   ["increment"]="yes",
+   ["kind"]="section",
+   ["level"]=2,
+   ["name"]="chapter",
+  },
+  {
+   ["block"]="frontpart",
+   ["conversionset"]="default",
+   ["hidenumber"]=true,
+   ["language"]="es",
+   ["numbers"]=1,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=1,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["catcodes"]=9,
+   ["coding"]="tex",
+   ["increment"]="yes",
+   ["kind"]="section",
+   ["level"]=3,
+   ["name"]="section",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=2,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=3,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["catcodes"]=9,
+   ["coding"]="tex",
+   ["increment"]="yes",
+   ["kind"]="section",
+   ["level"]=4,
+   ["name"]="subsection",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=4,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=5,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=6,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=7,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=8,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=9,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=10,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=11,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["block"]="bodypart",
+   ["conversionset"]="default",
+   ["language"]="es",
+   ["numbers"]=12,
+   ["separatorset"]="default",
+   ["set"]="all",
+  },
+  {
+   ["conversionset"]="pagenumber",
+  },
+  {
+   ["connector"]="–",
+   ["prefix"]="no",
+   ["set"]="part",
+  },
+ },
+ ["keys"]={
+  ["directives"]=true,
+  ["metadata"]=true,
+  ["numberdata"]=true,
+  ["numbers"]=true,
+  ["ownnumbers"]=true,
+  ["pagedata"]=true,
+  ["prefixdata"]=true,
+  ["processors"]=true,
+  ["sectiondata"]=true,
+  ["specification"]=true,
+ },
+ ["skip"]={
+  ["datasets"]=true,
+  ["positions"]=true,
+  ["userdata"]=true,
+ },
+ ["version"]=0x1.051eb851eb852p+0,
+}
+
+return utilitydata

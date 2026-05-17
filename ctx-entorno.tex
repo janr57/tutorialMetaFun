@@ -1,0 +1,60 @@
+\startenvironment ctx-entorno
+\project tutorialLuaMetaFun
+
+% Tamaño de papel A4
+\setuppapersize[A4]
+
+% Tipo de letra y tamaño por defecto
+%\setupbodyfont[libertinus, 10pt]
+\setupbodyfont[latin-modern, 11pt]
+
+% Idioma español
+\mainlanguage[es]
+
+% Indentación de la primera línea de cada párrafo
+\setupindenting[yes, small]
+
+% Espaciado entre líneas de texto
+%\setupinterlinespace[medium]
+%\setupinterlinespace[1.1\bodyfontsize]
+
+% Espaciado entre párrafos
+\setupwhitespace[medium]
+
+% Numeración de páginas
+\setuppagenumbering[location={footer, middle}]
+
+% Activar colores
+\setupcolors[state=start]
+
+% Portada
+\definelayout[portada][topspace=0cm]
+\definelayout[paginablanca][topspace=-8cm]
+
+% Imágenes
+\setupexternalfigure[order={svg,pdf,png,jpg}]
+
+% Referencia a figuras o tablas que incluya el número del capítulo
+\setupcaptions[way=bychapter, prefixsegments=chapter]
+
+
+% Código fuente
+\setuptyping[color=yes]
+
+% Matemáticas
+% order=reverse cambia , por . y viceversa
+% method=5 separa los miles, etc o milésimas etc por espacios
+\setupunit[order=reverse,method=5]
+
+\stopenvironment
+% ----------------------------------------------------------------------
+
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: context
+%%% ConTeXt-Mark-version: "IV"
+%%% TeX-engine: default
+%%% TeX-master: "ctx-tutorialLuaMetaFun.tex"
+%%% End:
+

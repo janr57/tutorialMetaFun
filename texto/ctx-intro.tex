@@ -1,0 +1,306 @@
+% ctx-intro.tex
+%
+% Copyright (C) 2022--2026 José A. Navarro Ramón <janr.devel@gmail.com>
+% Licencia del código GPLv2
+% Licencia Creative Commons Recognition Non-Commercial Share-alike.
+% (CC-BY-NC-SA)
+
+
+\startcomponent ctx-intro
+  \product tutorialLuaMetaFun
+  
+  \startchapter[title=Introducción]
+    En este capítulo presentaremos unos pocos conceptos para abrir boca con
+    \MetaFun.
+
+    Empezaremos distinguiendo dos tipos de objetos gráficos de \MetaPost\ y de
+    \MetaFun.
+    \startitemize[n,packed,joinedup]
+    \item {\bf \type{path}, o camino, trazo o línea}:
+      Es como la silueta invisible que trazas en el aire con un dedo. No tiene
+      color, grosor ni visibilidad. Es invisible hasta que lo dibujas con un comando.
+    \item {\bf \type{picture}, imagen u objeto gráfico}:
+      Es como el lienzo donde has aplicado pintura sobre la silueta \type{path}.
+      Es un contenedor visual. Almacena el resultado de haber dibujado
+      \type{draw} o rellenado \type{fill} un \type{path}, incluyendo sus colores,
+      grosores de línea y textos. Hay objetos gráficos nativos de \MetaPost\ o
+      \MetaFun, que se generan en el código nativo de estos sistemas. Pero hay otros
+      que se originan a partir de un archivo gráfico con formato .svg, .pdf, .png,
+      .jpg u otros. En este último caso se importan a \MetaPost / \MetaFun\ mediante
+      la orden \type{externalfigure}.
+    \stopitemize
+    \blank[4em]
+    Analicemos el siguiente dibujo y su código
+
+    \blank[-2cm]
+    % Definición de búfers
+    \startbuffer[circulo_inicial]
+      \startMPcode
+        fill fullcircle;
+      \stopMPcode
+    \stopbuffer
+    % Para código fuente
+    \startbuffer[circulo_inicial_txt]
+      \starttyping[option=METAFUN]
+        \startMPcode
+          fill fullcircle ;
+        \stopMPcode
+      \stoptyping
+    \stopbuffer
+    % .........................................................................
+    % Impresión de búfers
+    \startlinealignment[left]
+      \framed[frame=off,location=middle]{%
+        \getbuffer[circulo_inicial]}% <--- ¡El % aquí es vital!
+      \hskip 3.0em % Aumentamos el espacio entre la imagen y el código
+      \framed[frame=off,location=middle,align=right,width=fit]{%
+        \switchtobodyfont[10.0pt]\typebuffer[circulo_inicial_txt]}
+    \stoplinealignment
+
+    Pero, ¿qué está pasando? ¿dónde está el dibujo? Si observas con atención verás
+    un pequeño punto negro a la izquierda del código. Para explicar lo que está
+    ocurriendo vamos a analizarlo.
+
+  \startsection[title={Comandos como \color[blue]{\type{fill}}} y otros]
+
+    El comando \type{fill} rellena de color ---negro por defecto--- la imagen o
+    el dibujo (trazo) que le sigue en el código. En \MetaFun\ hay más comandos de
+    dibujo y manipulación visual, como \type{draw}, \type{filldraw}, \type{undraw},
+    \type{unfill}, \type{drawpoints}, \type{drawshadow}, \type{drawlabel}
+    (o \type{label}), que iremos utilizando conforme avancemos. A continuación
+    presentamos brevemente su utilidad:
+    \startitemize[n, packed, joinedup]
+      Comandos de combinación y relleno avanzado (\MetaPost):
+      \startitemize[packed, joinedup]
+      \item {\bf\type{fill}}:
+        Rellena el trazo cerrado que se le pasa.
+      \item {\bf\type{draw}}:
+        Dibuja una línea (trazo), o una imagen creada en MetaFun o que proviene de
+        un fichero gráfico (.svg, .png, jpg, etc.) que se le pasa al comando.
+      \item {\bf\type{filldraw}}: Combina a la vez los dos comandos anteriores.
+        Rellena el interior de un trazo cerrado y, al mismo tiempo, dibuja su
+        contorno. Es más eficiente que realizar las dos operaciones por separado.
+      \item {\bf\type{drawfill}}: Es el inverso conceptual de \type{drawfill}.
+        En la práctica realiza la misma acción combinada, pero asegura que las
+        propiedades del trazo exterior e interior se procesen juntas.
+      \item {\bf \type{undraw}/\type{unfill}/\type{unfilldraw}}:
+        Estos comando actúan como un \quotation{borrador eléctrico}. No pintan de
+        color blanco; lo que hacen es \quotation{restar} o recortar un trazo o un
+        área del objeto gráfico (\type{picture}) actual, dejando el fondo
+        transparente.
+      \stopitemize
+
+    \item Comandos de \MetaFun\ (extensiones de \ConTeXt):
+      \MetaFun\ introduce macros de alto nivel que simplifican el diseño editorial
+      y de fondos (\emph{overlays}):
+      \startitemize[packed, joinedup]
+      \item {\bf\type{drafill} con tranparencias}:
+        \MetaFun\ añade soporte nativo para transparencias mediante
+        \type{withtransparency}.
+      \item {\bf\type{drawpoints} / \type{drawcontrolpoints}}:
+        Son comandos de depuración muy útiles. Dibujan de forma automática los
+        puntos clave (nodos) o las manecillas de control \emph{Bézier} de un trazo
+        para que veas cómo está construida la curva matemáticamente).
+      \item {\bf \type{drawboundingbox}}: Dibuja un rectángulo exacto que delimita
+        los bordes del marco invisible de un trazo o una imagen completa.
+      \stopitemize
+
+    \item Comandos para texto y sombras:
+      \startitemize[packed, joinedup]
+      \item {\bf\type{drawlabel} / \type{label}}:
+        Coloca texto en coordenadas específicas del gráfico. \MetaFun\ añade
+        \type{thelabel} para generar el texto como un objeto independiente antes
+        de posicionarlo.
+      \item {\bf \type{drawshadow}}:
+        Es una macro exclusiva de \MetaFun\ que genera automáticamente una sombra
+        difuminada o desplazada debajo de un trazo o figura.
+      \stopitemize
+    \stopitemize
+  \stopsection
+
+  \startsection[title=Función generadora \color[red]{\type{fullcircle}}]
+    
+    Ahora fijamos nuestra atención en el término \type{fullcircle} que sigue al
+    comando. Es una función que \emph{genera} un trazo, camino o \emph{path} en
+    inglés; en este caso es un camino cerrado que se puede rellenar con el comando
+    \emph{\type{fill}}. Nótese que, por sí solo, \type{fullcircle} no dibuja nada,
+    incluso da error, necesita un comando detrás. Es como un dedo en el aire
+    dibujando un círculo.
+
+    Un \emph{path}, como el que crea \type{fullcircle}, es solo geometría pura.
+    Define una forma matemática (puntos, líneas y curvas), pero no tiene color,
+    grosor ni visibilidad. Solo es visible cuando se dibuja o rellena.
+
+    Entonces, ¿por qué es tan pequeño el círculo que se dibuja cuando lo rellenamos
+    con el comando \type{fill}? Lo que ocurre es que, al igual que el color del
+    círculo es negro por defecto, su diámetro es la unidad de longitud establecida
+    en \MetaPost, que por defecto es \type{1 bp} o \quotation{punto grande},
+    \emph{big point} en inglés.
+
+    Es importante entender que esta función define la geometría, el tamaño y la
+    posición del centro del círculo; la forma es un círculo, el tamaño es una unidad
+    \MetaPost\ y su centro está en el origen (0,0). El comando \type{fill} solo
+    ejecuta la acción de rellenar lo que genera \type{fullcircle}.
+
+    \startsubsection[title=Unidad \color[black]{\type{bp}}]
+    
+      Esta unidad se define como 1/72 de pulgada, (0.35278 cm aproximadamente).
+      Como se puede observar, su tamaño es muy pequeño.
+    
+    \stopsubsection
+
+    \startsubsection[title=Operador secundario \color[darkgreen]{\type{scaled}}]
+      Para poder modificar el tamaño del círculo se suele utilizar la función
+      modificadora \type{scaled}.
+      En la jerga interna de MetaPost/MetaFun, se clasifica como un
+      \type{secondarydef} (operador secundario) o \emph{binary operator}.
+      Funciona exactamente como un operador matemático (como el signo de multiplicar
+      \type{*}), pero diseñado específicamente para transformar objetos geométricos o
+      numéricos. Este operador modifica las dos dimensiones, horizontal y vertical
+      en la misma proporción.
+
+      El factor de escalado se puede escribir directamente o entre paréntesis.
+      En el siguiente ejemplo rellenaremos un cículo de \unit{1 cm} de diámetro
+      con el color negro por defecto y con su centro en el origen:
+      
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{%
+          \startMPcode
+            fill fullcircle scaled 1cm ;
+          \stopMPcode}
+        \hskip -2.0em % Disminuimos el espacio entre la imagen y el código
+        \framed[frame=off,location=middle,align=right,width=fit]{%
+          \switchtobodyfont[11.0pt]
+          \starttyping[option=METAFUN]
+            \startMPcode
+              fill fullcircle scaled 1cm ;
+            \stopMPcode
+          \stoptyping}
+      \stoplinealignment
+
+      ¿Y si no especificamos la unidad? Entonces \MetaFun\ utiliza la unidad por
+      defecto de \MetaPost, que es \type{bp}. En el ejemplo siguiente, estamos
+      rellenando un círculo de 20bp de diámetro (20 puntos).
+
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{%
+          \startMPcode
+            fill fullcircle scaled 20 ;
+          \stopMPcode}
+        \hskip -2.0em % Disminuimos el espacio entre la imagen y el código
+        \framed[frame=off,location=middle,align=right,width=fit]{%
+          \switchtobodyfont[11.0pt]
+          \starttyping[option=METAFUN]
+            \startMPcode
+              fill fullcircle scaled 20 ;
+            \stopMPcode
+          \stoptyping}
+      \stoplinealignment
+      
+      Normalmente, se prefiere especificar el tamaño en una unidad conveniente,
+      que suele ser una del sistema métrico decimal, o si conviene, del sistema
+      imperial inglés.
+    
+    \stopsubsection
+
+    \startsubsection[title={Operadores secundarios \color[darkgreen]{\type{xscaled}},
+        \color[darkgreen]{\type{yscaled}}} y \color[darkgreen]{\type{xyscaled}}]
+
+      Si no queremos escalar el objeto gráfico (\type{picture}) de forma uniforme,
+      tenemos las siguientes tres opciones. La primera que vamos a ver escala
+      la dimensión horizontal, pero deja sin modificar la vertical:
+      
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{%
+          \startMPcode
+            fill fullcircle xscaled (1cm) ;
+          \stopMPcode}
+        \hskip -2.0em % Disminuimos el espacio entre la imagen y el código
+        \framed[frame=off,location=middle,align=right,width=fit]{%
+          \switchtobodyfont[11.0pt]
+          \starttyping[option=METAFUN]
+            \startMPcode
+              fill fullcircle xscaled 1cm ;
+            \stopMPcode
+          \stoptyping}
+      \stoplinealignment
+
+      La segunda escala la dimensión vertical, dejando sin modificar la horizontal:
+      
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{%
+          \startMPcode
+            fill fullcircle yscaled 1cm ;
+          \stopMPcode}
+        \hskip -2.0em % Disminuimos el espacio entre la imagen y el código
+        \framed[frame=off,location=middle,align=right,width=fit]{%
+          \switchtobodyfont[11.0pt]
+          \starttyping[option=METAFUN]
+            \startMPcode
+              fill fullcircle yscaled 1cm ;
+            \stopMPcode
+          \stoptyping}
+      \stoplinealignment
+
+      Por último, la tercera permite modificar las dos dimensiones a la vez.
+      Los dos valores se deben situar entre paréntesis y separados por una coma:
+      
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{%
+          \startMPcode
+            fill fullcircle xyscaled (2cm, 10mm) ;
+          \stopMPcode}
+        \hskip -3.0em % Disminuimos el espacio entre la imagen y el código
+        \framed[frame=off,location=middle,align=right,width=fit]{%
+          \switchtobodyfont[11.0pt]
+          \starttyping[option=METAFUN]
+            \startMPcode
+              fill fullcircle xyscaled (2cm, 10mm) ;
+            \stopMPcode
+          \stoptyping}
+      \stoplinealignment
+      
+    \stopsubsection
+
+    \startsubsection[title=Atributo \color[darkgreen]{\type{withcolor}}]
+      Es un modificador. No genera objetos, sino que modifica las propiedades de
+      un comando de dibujo (como \type{draw} o \type{fill}). Representaremos
+      una elipse de color rojo:
+      
+      \startlinealignment[left]
+        \framed[frame=off,location=middle]{%
+          \startMPcode
+            fill fullcircle xyscaled (2cm, 1cm) withcolor "red" ;
+          \stopMPcode}
+        \hskip -4.0em % Disminuimos el espacio entre la imagen y el código
+        \framed[frame=off,location=middle,align=right,width=fit]{%
+          \switchtobodyfont[11.0pt]
+          \starttyping[option=METAFUN]
+            \startMPcode
+              fill fullcircle xyscaled (2cm, 1cm) withcolor "red" ;
+            \stopMPcode
+          \stoptyping}
+      \stoplinealignment
+
+    \stopsubsection
+
+  \stopsection
+  
+
+  \stopsection
+ 
+
+\stopchapter
+
+\stopcomponent
+
+
+
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: context
+%%% ConTeXt-Mark-version: "IV"
+%%% TeX-engine: default
+%%% TeX-master: "../ctx-tutorialLuaMetaFun.tex"
+%%% End:
