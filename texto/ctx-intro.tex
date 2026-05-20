@@ -206,9 +206,18 @@
     \startsubsection[title={Operadores secundarios \color[darkgreen]{\type{xscaled}},
         \color[darkgreen]{\type{yscaled}}} y \color[darkgreen]{\type{xyscaled}}]
 
-      Si no queremos escalar el objeto gráfico (\type{picture}) de forma uniforme,
-      tenemos las siguientes tres opciones. La primera que vamos a ver escala
-      la dimensión horizontal, pero deja sin modificar la vertical:
+      En \MetaFun\ y \MetaPost, estos son operadores de transformación (un tipo
+      especial de función binaria).Sirven para aplicar un escalado no uniforme a un
+      objeto geométrico (path, picture o pen), estirándolo o encogiéndolo en los ejes
+      X e Y de forma independiente. ¿Cómo funciona? A diferencia de scaled (que
+      escala todo de forma proporcional con un solo número), xyscaled toma como
+      argumento un par de coordenadas (pair), definido como (factor_x, factor_y).
+      El primer número multiplica la anchura (eje X). El segundo número multiplica la
+      altura (eje Y).
+
+      Por tanto, si no queremos escalar el objeto gráfico (\type{picture}) de forma
+      uniforme, tenemos las tres siguientes opciones. La primera que vamos a ver
+      escala la dimensión horizontal, pero deja sin modificar la vertical:
       
       \startlinealignment[left]
         \framed[frame=off,location=middle]{%
