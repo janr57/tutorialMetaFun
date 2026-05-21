@@ -9,99 +9,69 @@
 \startcomponent ctx-texto
   \product tutorialLuaMetaFun
   
-\startchapter[title=Texto]
-  En este capítulo veremos cómo utilizar texto en figuras realizadas con
-  \MetaFun/\MetaPost.
+  \startchapter[title=Texto]
+    En este capítulo veremos cómo utilizar texto en figuras realizadas con
+    \MetaFun/\MetaPost.
 
-  La primera línea del código que sigue se analizó en el capítulo anterior.
-  Analizaremos la segunda línea y su resultado en \MetaFun:
-  \starttyping[option=METAFUN]
-    \startMPcode
-      fill fullcircle xyscaled (8cm,1cm) withcolor "darkred" ;
-      draw textex{"\bf Texto A"} withcolor "white" ;
-    \stopMPcode
-  \stoptyping
-  
-  \startMPcode
-    fill fullcircle xyscaled (8cm,1cm) withcolor "darkred" ;
-    draw textext("\bf This is text A") withcolor "white" ;
-  \stopMPcode
-
-  El comando que utilizamos es \type{draw}, que dibujará el trazo que indiquemos
-  a continuación. La que sigue es la función generadora \type{textext}.
-  
-  \startsection[title=Función generadora \color[red]{\type{textext}}]
-    Esta es una macro específica de \ConTeXt / \MetaFun\ (no existe en \MetaPost\
-    clásico estándar).
-    Técnicamente, es una función generadora que devuelve un objeto gráfico,
-    que toma una cadena de texto, la procesa a través de \ConTeXt\ y devuelve
-    una variable de tipo \type{picture}.
-    En resumen, es el sujeto o el objeto que vas a pintar mediante el comando
-    \type{draw}.
-
-    Esta función es, como hemos dicho, una función generadora; se usa añadiendo entre
-    paréntesis un texto \type{textext("...texto...")} y genera un objeto gráfico de
-    tipo \type{picture}.
-    Un objeto de tipo \type{picture} es una imagen en \MetaPost, no un camino o
-    trazo. Es una estructura compleja que contiene información tipográfica, fuentes
-    incrustadas, colores propios y contornos cerrados devueltos por el motor
-    tipográfico de \ConTeXt\.
-
-    \startitemize[packed, joinedup]
-    \item \type{textext} es, como hemos dicho, una función generadora; se usa
-      añadiendo entre paréntesis un texto \type{textext("...texto...")} y genera un
-      objeto gráfico de tipo \type{picture}.
-      En resumen, un objeto de tipo \type{picture} es una imagen en \MetaPost, no
-    un camino o trazo. Es una estructura compleja que contiene información
-    tipográfica, fuentes incrustadas, colores propios y contornos cerrados devueltos
-    por el motor tipográfico de \ConTeXt\.
-    \item \type{xyscaled}
-    \stopitemize
-    
-    \startsection[title=Atributo \color[darkgreen]{\type{withcolor}}]
-      Es un adjetivo, un modificador de opciones (un atributo), que no genera
-      objetos, sino que modifica las propiedades de un comando de dibujo
-      (como draw o fill).
-
-      Otro atributo es \type{xyscaled}, que modifica el escalado de una imagen.
-      En el ejemplo anterior modifica las proporciones del círculo.
-
-    \stopsection
-
-    \startsection[title={Comandos de \ConTeXt\ en el texto}]
-      
-      En el texto se pueden utilizar comandos estándar de \ConTeXt\, como por
-      ejemplo \type{framed}, que lo recuadra
-
+    La primera línea del código que sigue se analizó en el capítulo anterior.
+    Analizaremos la segunda línea y su resultado en \MetaFun:
     \starttyping[option=METAFUN]
       \startMPcode
         fill fullcircle xyscaled (8cm,1cm) withcolor "darkred" ;
-        draw textex{"\framed{\bf Texto A}"} withcolor "white" ;
+        draw textex{"\bf Texto A"} withcolor "white" ;
       \stopMPcode
     \stoptyping
-
+  
     \startMPcode
-      fill fullcircle xyscaled (8cm, 1cm) withcolor "green" ;
-      draw textext("\bf \framed{This is text A}") withcolor "black" ;
+      fill fullcircle xyscaled (8cm,1cm) withcolor "darkred" ;
+      draw textext("\bf This is text A") withcolor "white" ;
     \stopMPcode
-  \stopsection
 
-  \startMPcode
-    fill fullcircle xyscaled (8cm, 1cm) withcolor "green" ;
-    draw textext("\bf \framed{This is text A}") xyscaled(0.4mm,0.4mm) withcolor
-    "black" ;
-  \stopMPcode
-  \stopsection
+    En esta segunda línea utilizamos el comando \type{draw}, que dibujará el trazo que
+    indiquemos a continuación. La que sigue es la función generadora \type{textext}.
+  
+    \startsection[title=Función generadora \color[red]{\type{textext}}]
+    
+      Esta es una macro específica de \ConTeXt / \MetaFun\ (no existe en \MetaPost\
+      clásico estándar).
+      Técnicamente, es una función generadora que toma una cadena de texto, la procesa
+      a través de \ConTeXt\ y devuelve un objeto gráfico de tipo \type{picture},
+      que es el sujeto o el objeto que vas a pintar mediante el comando \type{draw}.
 
-%  xyscaled es en realidad un atajo (shorthand) que combina dos operadores básicos en
-%  uno solo. Las siguientes tres líneas de código hacen exactamente lo mismo:
+      Esta función se usa añadiendo entre paréntesis un texto:
+      \type{textext("...texto...")}. Cuando se procesa, genera un objeto gráfico de
+      tipo \type{picture}, que es una imagen en \MetaPost (no un camino o trazo). El
+      objeto \type{picture} es una estructura compleja que contiene información
+      tipográfica, fuentes incrustadas, colores propios y contornos cerrados
+      devueltos por el motor tipográfico de \ConTeXt\.
+
+      \startsubsection[title={Comandos de \ConTeXt\ en el texto}]
+    
+        En el texto se pueden utilizar comandos estándar de \ConTeXt, como por
+        ejemplo \type{framed}, que lo recuadra
+    
+        \starttyping[option=METAFUN]
+          \startMPcode
+            fill fullcircle xyscaled (8cm,1cm) withcolor "darkred" ;
+            draw textex{"\framed{\bf Texto A}"} withcolor "white" ;
+          \stopMPcode
+        \stoptyping
+
+        \startMPcode
+          fill fullcircle xyscaled (8cm, 1cm) withcolor "green" ;
+          draw textext("\bf \framed{This is text A}") withcolor "black" ;
+        \stopMPcode
+
+      \stopsubsection
+   
+    \stopsection
+    
+
+
 %  draw fullcircle xyscaled (4cm, 2cm) ;
 %draw fullcircle xscaled 4cm yscaled 2cm ;
 %draw fullcircle transformed identity scaled 1 xscaled 4cm yscaled 2cm ; % Interno
 %
-%Características técnicasTipo de datos: Devuelve un objeto del mismo tipo que recibe
-%(si le das un path, devuelve un path transformado).Precedencia: Tiene la misma
-%prioridad matemática que la multiplicación o el operador scaled estándar.
 
 \stopchapter
 
