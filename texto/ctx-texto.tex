@@ -61,9 +61,75 @@
           fill fullcircle xyscaled (8cm, 1cm) withcolor "green" ;
           draw textext("\bf \framed{This is text A}") withcolor "black" ;
         \stopMPcode
+        Desde luego, se podría dibujar un marco en \MetaPost, pero \type{framed}
+        de \ConTeXt tiene más opciones, como alineaciones.
 
       \stopsubsection
-   
+
+    \stopsection
+    
+    \startsection[title=Función generadora \color[red]{\type{lmt_text}}]
+
+      Podemos incluir texto utilizando la interfaz de \MetaFun, que utiliza los
+      atributos, \type{text}, \type{color}, \type{style}, ... etc., separados por
+      comas, en las opciones de la función:
+      \starttyping[option=METAFUN]
+        \startMPcode
+          fill fullcircle xyscaled (8cm,1cm) withcolor "darkblue" ;
+          draw lmt_text [
+            text = "Texto A",
+            color = "white",
+            style = "bold"
+          ] ;
+        \stopMPcode        
+      \stoptyping
+
+      \startMPcode
+        fill fullcircle xyscaled (8cm,1cm) withcolor "darkblue" ;
+        draw lmt_text [
+          text = "Texto A",
+          color = "white",
+          style = "bold"
+        ] ;
+      \stopMPcode
+
+      Cuando se escriben números, podemos usar la opción \type{format}:
+      \starttyping[option=METAFUN]
+        \startMPcode
+          fill fullcircle xyscaled (8cm,1cm) withcolor "darkred" ;
+          draw lmt_text [
+            text
+            = decimal 123.45678,
+            color = "white",
+            style = "bold",
+            format = "@0.3F",
+          ] ;
+        \stopMPcode
+      \stoptyping
+
+      \startMPcode
+        fill fullcircle xyscaled (8cm,1cm) withcolor "darkblue" ;
+        draw lmt_text [
+          text
+          = decimal 123.45678,
+          color = "white",
+          style = "bold",
+          format = "@0.3F",
+        ] ;
+      \stopMPcode
+
+%      \startMPcode
+%        fill fullcircle xyscaled (8cm,1cm) withcolor "black" ;
+%        draw lmt_text [
+%          text
+%          = "Número" decimal 123.45678,
+%          color = "white",
+%          style = "bold",
+%          format = "@0.3F",
+%        ] ;
+%      \stopMPcode
+      
+      
     \stopsection
     
 
